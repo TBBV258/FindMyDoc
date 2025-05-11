@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* More minimalist, clean color palette */
+  --background: 0 0% 98%;
+  --foreground: 220 20% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 20% 16%;
+  --primary: 142 60% 39%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 210 90% 54%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 220 10% 46%;
+  --accent: 187 83% 41%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 20% 94%;
+  --input: 220 20% 94%;
+  --ring: 142 60% 39%;
+  --warning: 45 100% 51%;
+  --warning-foreground: 0 0% 98%;
+  --radius: 0.375rem;
+}
+
+.dark {
+  --background: 220 20% 10%;
+  --foreground: 0 0% 98%;
+  --card: 220 20% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 220 20% 10%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 142 60% 39%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 210 90% 54%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 220 20% 18%;
+  --muted-foreground: 220 10% 70%;
+  --accent: 187 83% 41%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 20% 20%;
+  --input: 220 20% 20%;
+  --ring: 142 60% 39%;
+  --warning: 45 100% 51%;
+  --warning-foreground: 0 0% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    @apply font-medium;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .btn-minimalist {
+    @apply px-4 py-2 rounded-md transition-all;
+  }
+  
+  .card-minimalist {
+    @apply border bg-card p-4 rounded-lg shadow-sm;
+  }
+  
+  .input-minimalist {
+    @apply px-3 py-2 rounded-md border border-input bg-background;
+  }
+  
+  .hint-box {
+    @apply bg-muted p-3 rounded-md text-sm text-muted-foreground border-l-4 border-primary/50 my-3;
+  }
+  
+  .feature-badge {
+    @apply inline-flex items-center rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary;
+  }
+}
+
+/* Chat Bubbles */
+.chat-bubble-right {
+  @apply bg-primary/10 rounded-[0.75rem_0_0.75rem_0.75rem] text-foreground;
+}
+
+.chat-bubble-left {
+  @apply bg-white rounded-[0_0.75rem_0.75rem_0.75rem] shadow-sm;
+}
+
+/* Points progress bar */
+.points-progress {
+  @apply bg-gradient-to-r from-primary/80 to-primary rounded-full h-2;
+}
+
+/* Active Tab Styles */
+.tab-active {
+  @apply text-primary border-b-2 border-primary font-medium;
+}
+
+.bottom-nav-active {
+  @apply text-primary font-medium;
+}
+
+/* Hide scrollbar for clean UI */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
